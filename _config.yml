@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Frisco Template
-url: "https://brave-submarine.cloudvent.net"
+title: Cloud Masters
+url: "https://www.cloud-masters.nl"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
@@ -117,5 +117,5 @@ social_icons:
   - RSS
 
 _comments:
-  description: Text shown when sharing on social media
+  description: Uw cloud onze zorg
   blurb: Short bio or description of this person
