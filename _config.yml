@@ -1,17 +1,17 @@
-title: Urban Template
-url: "https://teal-worm.cloudvent.net"
+title: Cloud Masters
+url: "https://www.cloud-masters.nl"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
 disqus_shortname:
 
 # Default description in social shares for the jekyll-seo-tag gem
-description: Jekyll template with example content for a web agency.
+description: Uw cloud onze zorg.
 
 # Author details for the jekyll-seo-tag gem
-author:
-  name:
-  email:
+author: Maarten Camps
+  name: Maarten
+  email: maarten@cloud-masters.nl
   twitter: # twitter username without the @ symbol
 
 # Social details for the jekyll-seo-tag gem
