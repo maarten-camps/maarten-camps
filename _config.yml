@@ -105,16 +105,16 @@ defaults:
 # CloudCannon
 
 social_icons:
-  - Facebook
-  - Google Plus
+  #- Facebook
+  #- Google Plus
   - Instagram
   - LinkedIn
-  - Pinterest
-  - Tumblr
-  - Twitter
-  - YouTube
+  #- Pinterest
+ # - Tumblr
+  #- Twitter
+  #- YouTube
   - Email
-  - RSS
+  #- RSS
 
 _comments:
   description: Uw cloud onze zorg
