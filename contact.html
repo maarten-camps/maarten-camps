@@ -1,54 +1,61 @@
 ---
 title: Contact
-description: Send us a message to find out more!
+heading: Get in touch today
+subtitle: We'd love to help your business.
 map:
   latitude: -45.8787605
   longitude: 170.5027976
   address: "1 George Street, Dunedin, New Zealand"
   zoom: 13
-image: https://source.unsplash.com/WNAO036c6FM/2000x1322?a=.png
 ---
 
-<section class="hero" style="background-image: url({% include relative-src.html src=page.image %})">
-	<div class="inner-hero text-container">
-		<div class="hero-text-container">
-			<h1 class="editable">Get in touch today</h1>
-			<p class="subtext editable">If you have any questions or queries send us a message and we'll get back to you as soon as we can.</p>
-		</div>
-	</div>
-</section>
-
-<section class="pad">
-	<div class="text-container contact-box">
+<section class="diagonal">
+	<div class="container">
 		<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-			<input type="hidden" name="_to" value="">
-			<input type="text" name="_gotcha" style="display: none;">
+			<input type="hidden" name="_to" value="support@example.com" />
+			<input type="text" name="_gotcha" style="display: none;" />
 
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name" placeholder="Enter your name...">
+			<div class="halves">
+				<div>
+					<label for="name">First Name</label>
+					<input type="text" name="first-name" id="first-name" placeholder="John" />
+				</div>
+
+				<div>
+					<label for="name">Last Name</label>
+					<input type="text" name="last-name" id="last-name" placeholder="Doe" />
+				</div>
+			</div>
 
 			<label for="email">Email Address</label>
-			<input type="email" name="email" id="email" placeholder="Enter your email..." required>
+			<input type="email" name="email" id="email" placeholder="john@example.com" required />
 
 			<label for="message">Message</label>
-			<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+			<textarea name="message" id="message" placeholder="Hi There..."></textarea>
 
-			<input type="submit" value="Send Message">
+			<input type="submit" value="Send Message" />
 		</form>
+	</div>
+</section>
 
-		<div class="contact-details">
+<section class="diagonal map">
+	<div id="gmap_canvas"></div>
+</section>
+
+<section class="diagonal">
+	<div class="container halves aligned-top">
+		<div>
 			<h3>Address</h3>
-			<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
-
+				<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+		</div>
+		<div>
 			<h3>Email</h3>
-			<p class="editable"><a href="mailto:support@example.com">support@example.com</a></p>
+			<p><a href="mailto:{{ site.data.company.contact_email_address }}">{{ site.data.company.contact_email_address }}</a></p>
 		</div>
 	</div>
 </section>
 
-<div class="map" id="map"></div>
-
-<script>
+<script type="text/javascript">
 	window.mapData = {{ page.map | jsonify }};
 
 	function initMap() {
@@ -64,15 +71,13 @@ image: https://source.unsplash.com/WNAO036c6FM/2000x1322?a=.png
 			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
-
-		var map = new google.maps.Map(document.getElementById('map'), myOptions);
-
-		var marker = new google.maps.Marker({
+		map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+		marker = new google.maps.Marker({
 			map: map,
 			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
 		});
 
-		google.maps.event.addDomListener(window, 'resize', function() {
+		google.maps.event.addDomListener(window, "resize", function () {
 			map.setCenter(myOptions.center);
 		});
 	}
